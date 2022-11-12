@@ -25,3 +25,17 @@ def test_verificaPrimo(num, res_esp):
     res = verificador.verificaPrimo(num)
     assert res_esp == res
 
+# Teste para caso a lista esteja vazia, deve retornar uma lista vazia.
+def test_retirarNumero_lista_vazia():
+    verificador = Verificador()
+    res = verificador.retirarNumero([])
+    assert [] == res
+
+# Teste para caso o tamanho da lista seja um ou dois e composta por números não primos, deve retornar uma lista vazia.
+# Se houver algum número primo, deve retornar a lista somente com os números primos.
+@pytest.mark.parametrize("lista, res_esp", [( [2], [2] ), ( [3], [3]), ( [4], []), ( [5], [5]), ( [6], []), ( [7], [7]), ( [11], [11]), ( [13], [13]), ( [17], [17])])
+def test_retirarNumero_lista_um_ou_dois(lista, res_esp):
+    verificador = Verificador()
+    res = verificador.retirarNumero(lista)
+    assert res_esp == res
+
