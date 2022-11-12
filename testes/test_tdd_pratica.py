@@ -13,7 +13,7 @@ from src.verificador import Verificador
 
 # Teste para retirar o maior e o menor valor de uma lista de números naturais EXCETO se algum deles for primo.
 
-@pytest.mark.parametrize("lista, res_esp", [([7, 8, 18], [8, 18])])
+@pytest.mark.parametrize("lista, res_esp", [( [2, 3, 5], [3] ), ( [4, 5, 2], [4])])
 def test_retirarNumero(lista, res_esp):
     verificador = Verificador()
     res = verificador.retirarNumero(lista)
